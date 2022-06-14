@@ -1,12 +1,3 @@
-switch(TEST) {
-    case "-" :  sh 'TEST="text.txt"'
-                break;
-    case "test" :  sh 'TEST="log.txt"'
-                break;
-    default :  sh 'TEST="default.txt"'
-                break;
-}
-
 pipeline {
     agent any;
     parameters {
@@ -16,10 +7,9 @@ pipeline {
         stage('Print') {
             steps {
                 sh '''
-                    echo $TEST
-                    touch $TEST
-                    echo ".txt file was created" > $TEST
-                    echo $(cat $TEST)
+                    touch log.txt
+                    echo ".txt file was created" > log.txt
+                    echo $(cat log.txt)
                     echo $?
                 '''
             }
@@ -27,7 +17,7 @@ pipeline {
     }
     post {
         always {
-           archiveArtifacts artifacts: "$TEST"
+           archiveArtifacts artifacts: "log.txt"
         }
     }
 }
