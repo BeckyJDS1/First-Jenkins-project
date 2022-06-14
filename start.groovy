@@ -19,7 +19,10 @@ pipeline {
     }
     post {
         always {
-            sh 'STRING="post"; echo $STRING'
+            sh '''
+                touch log.txt
+                cat ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log >> log.txt
+            '''
         }
     }
 }
