@@ -1,3 +1,14 @@
+def fileName;
+
+switch(TEST) {
+    case "-" :  fileName = "text.txt"
+                break;
+    case "test" :  fileName = "log.txt"
+                break;
+    default :  fileName = "default.txt"
+                break;
+}
+
 pipeline {
     agent any;
     parameters {
@@ -8,9 +19,9 @@ pipeline {
             steps {
                 sh '''
                     echo $TEST
-                    touch text.txt
-                    echo "text.txt file was created" > text.txt
-                    echo $(cat text.txt)
+                    touch $fileName
+                    echo "fileName.txt file was created" > $fileName
+                    echo $(cat $fileName)
                     echo $?
                 '''
             }
@@ -18,7 +29,7 @@ pipeline {
     }
     post {
         always {
-            archiveArtifacts artifacts: "text.txt"
+            archiveArtifacts artifacts: "$fileName"
         }
     }
 }
