@@ -11,7 +11,7 @@ pipeline {
                 script {
                     build job : 'test',
                     parameters: [
-                        string(name: 'TEST', value: $STRING)
+                        string(name: 'TEST', value: 'test')
                     ]
                 }
             }
