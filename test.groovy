@@ -7,6 +7,8 @@ pipeline {
         stage('Print') {
             steps {
                 sh 'echo $TEST'
+		sh 'touch text.txt'
+		sh 'echo $?'
             }
         }
     }
