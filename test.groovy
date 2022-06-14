@@ -1,11 +1,11 @@
 pipeline {
     agent any;
     parameters {
-        string(name: 'TEST', defaultValue: 'sd')
+        string(name: 'TEST', defaultValue: '-')
     }
     stages {
         steps {
-            sh '.test'
+            sh 'echo ".test"'
         }
     }
 }
