@@ -1,7 +1,7 @@
 pipeline {
     agent any;
     parameters {
-        string (name: 'STRING', defaultValue: 'Hello', description: 'String to print')
+        string (name: 'STRING', defaultValue: '-', description: 'String to print')
     }
     stages {
         stage('Print') {
