@@ -19,9 +19,7 @@ pipeline {
     }
     post {
         always {
-            sh '''
                 archiveArtifacts artifacts: "*/*.log
-            '''
         }
     }
 }
