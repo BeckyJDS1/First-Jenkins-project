@@ -27,9 +27,9 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-        //    archiveArtifacts artifacts: "$fileName"
-        }
-    }
+//     post {
+//         always {
+//         //    archiveArtifacts artifacts: "$fileName"
+//         }
+//     }
 }
