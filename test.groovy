@@ -4,8 +4,10 @@ pipeline {
         string(name: 'TEST', defaultValue: '-')
     }
     stages {
-        steps {
-            sh 'echo ".test"'
+        stage('Print') {
+            steps {
+                sh 'echo ".test"'
+            }
         }
     }
 }
