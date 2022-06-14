@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Print') {
             steps {
-                sh 'echo ".test"'
+                sh './test.sh'
             }
         }
     }
