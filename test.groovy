@@ -29,7 +29,7 @@ pipeline {
     }
     post {
         always {
-            archiveArtifacts artifacts: "$fileName"
+        //    archiveArtifacts artifacts: "$fileName"
         }
     }
 }
