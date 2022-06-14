@@ -17,13 +17,12 @@ pipeline {
     stages {
         stage('Print') {
             steps {
-            FILENAME=$filename
                 sh '''
-                    echo $TEST
-                    touch $FILENAME
-                    echo "FILENAME.txt file was created" > FILENAME
-                    echo $(cat $FILENAME)
-                    echo $?
+                    echo $fileName
+                    #touch $FILENAME
+                   # echo "FILENAME.txt file was created" > FILENAME
+                   # echo $(cat $FILENAME)
+                   # echo $?
                 '''
             }
         }
