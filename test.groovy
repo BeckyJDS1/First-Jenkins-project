@@ -1,7 +1,7 @@
 pipeline {
     agent any;
     parameters {
-        string(name: 'TEST')
+        string(name: 'TEST' value: $STRING)
     }
     stages {
         steps {

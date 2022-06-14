@@ -9,10 +9,10 @@ pipeline {
                 sh 'echo $STRING'
                 sh 'STRING="test"'
                 script {
-                    def result = build job : 'test',
-                    parameters {
+                    build job : 'test',
+                    parameters: [
                         string(name: 'TEST', value: $STRING);
-                    }
+                    ]
                 }
             }
         }
