@@ -6,9 +6,12 @@ pipeline {
     stages {
         stage('Print') {
             steps {
-                sh 'echo $TEST'
-		sh 'touch text.txt'
-		sh 'echo $?'
+                sh '''
+                    echo $TEST
+                    touch text.txt
+                    echo "text.txt file was created" >> text.txt
+                    echo $?
+                '''
             }
         }
     }
