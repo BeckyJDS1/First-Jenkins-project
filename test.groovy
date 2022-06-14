@@ -9,7 +9,8 @@ pipeline {
                 sh '''
                     echo $TEST
                     touch text.txt
-                    echo "text.txt file was created" >> text.txt
+                    echo "text.txt file was created" > text.txt
+                    echo $(cat text.txt)
                     echo $?
                 '''
             }
