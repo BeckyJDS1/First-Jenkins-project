@@ -11,7 +11,7 @@ pipeline {
                 script {
                     def result = build job : 'test',
                     parameters {
-                        extendedChoice(name: 'TEST', value: $STRING);
+                        string(name: 'TEST', value: $STRING);
                     }
                 }
             }
