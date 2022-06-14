@@ -8,9 +8,11 @@ pipeline {
             steps {
                 sh 'echo $STRING'
                 sh '$STRING=test'
-                def result = build job : 'testing',
-                parameters {
-                    extendedChoice(name: 'TEST', value: $STRING);
+                script {
+                    def result = build job : 'testing',
+                    parameters {
+                        extendedChoice(name: 'TEST', value: $STRING);
+                    }
                 }
             }
         }
