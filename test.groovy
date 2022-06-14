@@ -1,11 +1,9 @@
-def fileName;
-
 switch(TEST) {
-    case "-" :  fileName = "text.txt"
+    case "-" :  TEST = "text.txt"
                 break;
-    case "test" :  fileName = "log.txt"
+    case "test" :  TEST = "log.txt"
                 break;
-    default :  fileName = "default.txt"
+    default :  TEST = "default.txt"
                 break;
 }
 
@@ -17,22 +15,19 @@ pipeline {
     stages {
         stage('Print') {
             steps {
-                script {
-                    println(fileName)
-                }
                 sh '''
-                    echo $fileName
-                    #touch $FILENAME
-                   # echo "FILENAME.txt file was created" > FILENAME
-                   # echo $(cat $FILENAME)
-                   # echo $?
+                    echo $TEST
+                    touch $TEST
+                    echo ".txt file was created" > $TEST
+                    echo $(cat $TEST)
+                    echo $?
                 '''
             }
         }
     }
-//     post {
-//         always {
-//         //    archiveArtifacts artifacts: "$fileName"
-//         }
-//     }
+    post {
+        always {
+           archiveArtifacts artifacts: "$TEST"
+        }
+    }
 }
