@@ -1,7 +1,7 @@
 pipeline {
     agent any;
     parameters {
-        string(name: 'TEST', value: 'sd')
+        string(name: 'TEST', defaultValue: 'sd')
     }
     stages {
         steps {
