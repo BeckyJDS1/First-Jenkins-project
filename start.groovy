@@ -1,4 +1,4 @@
-pipline {
+pipeline {
     agent any;
     parameters {
         string (name: 'STRING', defaultValue: 'Hello world', description: 'String to print')
