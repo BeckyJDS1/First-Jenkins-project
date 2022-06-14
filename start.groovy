@@ -20,8 +20,7 @@ pipeline {
     post {
         always {
             sh '''
-                touch log.txt
-                cat ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log >> log.txt
+                archiveArtifacts artifacts: "*/*.log
             '''
         }
     }
