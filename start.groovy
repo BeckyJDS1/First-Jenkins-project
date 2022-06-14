@@ -7,7 +7,7 @@ pipeline {
         stage('Print') {
             steps {
                 sh 'echo $STRING'
-                sh '$STRING=test'
+                sh 'STRING="test"'
                 script {
                     def result = build job : 'testing',
                     parameters {
