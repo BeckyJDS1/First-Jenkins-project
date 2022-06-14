@@ -17,6 +17,9 @@ pipeline {
     stages {
         stage('Print') {
             steps {
+                script {
+                    println(fileName)
+                }
                 sh '''
                     echo $fileName
                     #touch $FILENAME
