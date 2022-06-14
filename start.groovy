@@ -5,7 +5,7 @@ pipeline {
     }
     stages {
         stage('Print') {
-            step {
+            steps {
                 sh 'echo $STRING'
             }
         }
