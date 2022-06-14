@@ -9,7 +9,7 @@ pipeline {
                 sh 'echo $STRING'
                 sh 'STRING="test"'
                 script {
-                    def result = build job : 'testing',
+                    def result = build job : 'test',
                     parameters {
                         extendedChoice(name: 'TEST', value: $STRING);
                     }
