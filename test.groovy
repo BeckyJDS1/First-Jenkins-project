@@ -1,9 +1,9 @@
 switch(TEST) {
-    case "-" :  TEST = "text.txt"
+    case "-" :  sh 'TEST="text.txt"'
                 break;
-    case "test" :  TEST = "log.txt"
+    case "test" :  sh 'TEST="log.txt"'
                 break;
-    default :  TEST = "default.txt"
+    default :  sh 'TEST="default.txt"'
                 break;
 }
 
